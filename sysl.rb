@@ -4,11 +4,11 @@ require 'zlib'
 class Sysl < Formula
   desc "Sysl (pronounced \"sizzle\") is a system specification language"
   homepage "https://sysl.io"
-  url "https://github.com/ashwinsajiv/sysl/archive/v0.8.0.tar.gz"
-  sha256 "586be97749140d87d071a0a8e7aa5e2c0dd7b67672875f367cd44078447cdf48"
+  url "https://github.com/ashwinsajiv/sysl/archive/v0.9.0.tar.gz"
+  sha256 "a2c2f230faadd10876d4c9f1bae700e5c77cdce0f226523d168dcc3cf42c46f3"
   TAR_LONGLINK = '././@LongLink'
   def install
-	tar_gz_archive = File.join('/', 'Users', ENV['USER'], 'Library', 'Caches', 'Homebrew', 'sysl--0.7.0.tar.gz')
+	tar_gz_archive = File.join('/', 'Users', ENV['USER'], 'Library', 'Caches', 'Homebrew', 'sysl--0.9.0.tar.gz')
 	destination = File.join('/', 'Users', ENV['USER'], 'Library', 'Caches', 'Homebrew')
 
 	Gem::Package::TarReader.new( Zlib::GzipReader.open tar_gz_archive ) do |tar|
