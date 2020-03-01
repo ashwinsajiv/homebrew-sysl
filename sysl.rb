@@ -6,7 +6,7 @@ class Sysl < Formula
   homepage "https://sysl.io"
   url "https://github.com/ashwinsajiv/sysl/archive/v0.9.0.tar.gz"
   sha256 "a2c2f230faadd10876d4c9f1bae700e5c77cdce0f226523d168dcc3cf42c46f3"
-  TAR_LONGLINK = '././@LongLink'
+  	TAR_LONGLINK = '././@LongLink'
   def install
 	tar_gz_archive = File.join('/', 'Users', ENV['USER'], 'Library', 'Caches', 'Homebrew', 'sysl--0.9.0.tar.gz')
 	destination = File.join('/', 'Users', ENV['USER'], 'Library', 'Caches', 'Homebrew')
@@ -34,6 +34,8 @@ class Sysl < Formula
 	    dest = nil
 	  end
 	end
-    system "ruby", "sysl-install.rb"
+	Dir.chdir File.join('/', 'Users', ENV['USER'], 'Library', 'Caches', 'Homebrew', 'sysl-0.9.0', 'cmd', 'sysl')
+	system("go", "build")
+	FileUtils.cp(File.join(File.join('/', 'Users', ENV['USER'], 'Library', 'Caches', 'Homebrew', 'sysl-0.9.0', 'cmd', 'sysl'), 'sysl') , File.join('/', 'Users', ENV['USER'],'go', 'bin'))
   end
 end
